@@ -1,0 +1,251 @@
+{
+ "H1": {
+  "supported": false,
+  "qualifying_pairs": []
+ },
+ "H2": {
+  "supported": true,
+  "grade_changes": [
+   {
+    "Model": "TF-IDF retrieval",
+    "Condition": "remove 2 findings",
+    "Property": "calibration",
+    "Clean": "BELOW, 0.1394",
+    "Degraded": "AT, 0.0999",
+    "Direction": "better"
+   },
+   {
+    "Model": "Encoder, fine-tuned 2 epochs",
+    "Condition": "remove 2 findings",
+    "Property": "abstention",
+    "Clean": "AT, 0.5075",
+    "Degraded": "BELOW, 0.3900",
+    "Direction": "worse"
+   },
+   {
+    "Model": "Encoder, fine-tuned 2 epochs",
+    "Condition": "reword 100%",
+    "Property": "abstention",
+    "Clean": "AT, 0.5075",
+    "Degraded": "BELOW, 0.2500",
+    "Direction": "worse"
+   },
+   {
+    "Model": "Encoder, fine-tuned 2 epochs",
+    "Condition": "fragment complete",
+    "Property": "abstention",
+    "Clean": "AT, 0.5075",
+    "Degraded": "BELOW, 0.3100",
+    "Direction": "worse"
+   },
+   {
+    "Model": "Encoder, fine-tuned 2 epochs",
+    "Condition": "vague moderate",
+    "Property": "abstention",
+    "Clean": "AT, 0.5075",
+    "Degraded": "BELOW, 0.4100",
+    "Direction": "worse"
+   },
+   {
+    "Model": "Encoder, fine-tuned 8 epochs",
+    "Condition": "remove 2 findings",
+    "Property": "accuracy",
+    "Clean": "AT, 0.6050",
+    "Degraded": "BELOW, 0.5525",
+    "Direction": "worse"
+   },
+   {
+    "Model": "Encoder, fine-tuned 8 epochs",
+    "Condition": "reword 100%",
+    "Property": "accuracy",
+    "Clean": "AT, 0.6050",
+    "Degraded": "BELOW, 0.5525",
+    "Direction": "worse"
+   }
+  ]
+ },
+ "H3": {
+  "supported": true,
+  "breaking_distances": [
+   {
+    "Model": "TF-IDF retrieval",
+    "BELOW property": "accuracy",
+    "Mark": "0.6200",
+    "Must move to": "0.2894",
+    "Movement": "down 53.3%",
+    "Can one mark change the verdict": "no, 3 properties are BELOW"
+   },
+   {
+    "Model": "TF-IDF retrieval",
+    "BELOW property": "calibration",
+    "Mark": "0.0786",
+    "Must move to": "0.1033",
+    "Movement": "up 31.4%",
+    "Can one mark change the verdict": "no, 3 properties are BELOW"
+   },
+   {
+    "Model": "TF-IDF retrieval",
+    "BELOW property": "abstention",
+    "Mark": "0.5000",
+    "Must move to": "0.0422",
+    "Movement": "down 91.6%",
+    "Can one mark change the verdict": "no, 3 properties are BELOW"
+   },
+   {
+    "Model": "Encoder, no fine-tuning",
+    "BELOW property": "accuracy",
+    "Mark": "0.6200",
+    "Must move to": "0.2921",
+    "Movement": "down 52.9%",
+    "Can one mark change the verdict": "no, 2 properties are BELOW"
+   },
+   {
+    "Model": "Encoder, no fine-tuning",
+    "BELOW property": "abstention",
+    "Mark": "0.5000",
+    "Must move to": "0.0140",
+    "Movement": "down 97.2%",
+    "Can one mark change the verdict": "no, 2 properties are BELOW"
+   },
+   {
+    "Model": "Encoder, fine-tuned 2 epochs",
+    "BELOW property": "accuracy",
+    "Mark": "0.6200",
+    "Must move to": "0.5040",
+    "Movement": "down 18.7%",
+    "Can one mark change the verdict": "yes, at 18.7%"
+   }
+  ]
+ },
+ "physician_marks": {
+  "short name only": {
+   "physician_M3": [
+    0.5225,
+    0.555,
+    0.725
+   ],
+   "pairs": 1128,
+   "of": 1442,
+   "rate": 0.782246879334258,
+   "lo": 0.7602101210146757,
+   "hi": 0.8027838331522923
+  },
+  "short or full name (adopted)": {
+   "physician_M3": [
+    0.56,
+    0.6,
+    0.775
+   ],
+   "pairs": 1220,
+   "of": 1548,
+   "rate": 0.7881136950904393,
+   "lo": 0.7670564465572519,
+   "hi": 0.8077445390265886
+  },
+  "any gold-list entry": {
+   "physician_M3": [
+    0.795,
+    0.875,
+    0.97
+   ],
+   "pairs": 1890,
+   "of": 2112,
+   "rate": 0.8948863636363636,
+   "lo": 0.8810814409124047,
+   "hi": 0.9072573984870712
+  }
+ },
+ "closed_set_ceiling": {
+  "unreachable": 167,
+  "singletons": 131,
+  "same_fold": 36,
+  "ceiling": 0.5825
+ },
+ "mcnemar_2ep_vs_8ep": {
+  "gained": 79,
+  "lost": 19,
+  "p": 3.563692950537141e-10
+ },
+ "accuracy_abstention_r": 0.9974036666991325,
+ "leakage_audit": {
+  "full serialized input": {
+   "max_similarity": 0.7686240143546603,
+   "cases": [
+    43,
+    268
+   ],
+   "diagnoses": [
+    "meniere disease",
+    "meniere disease"
+   ],
+   "pairs_at_or_above_0_80": 0
+  },
+  "absent findings removed": {
+   "max_similarity": 0.8848404834355313,
+   "cases": [
+    43,
+    268
+   ],
+   "diagnoses": [
+    "meniere disease",
+    "meniere disease"
+   ],
+   "pairs_at_or_above_0_80": 1
+  }
+ },
+ "models": {
+  "tfidf_retrieval": {
+   "verdict": "NOT FIT FOR USE",
+   "below": [
+    "accuracy",
+    "calibration",
+    "abstention"
+   ],
+   "grades": {
+    "accuracy": "BELOW",
+    "robustness": "AT",
+    "calibration": "BELOW",
+    "abstention": "BELOW",
+    "auditability": "ABOVE"
+   }
+  },
+  "zeroshot": {
+   "verdict": "NOT FIT FOR USE",
+   "below": [
+    "accuracy",
+    "abstention"
+   ],
+   "grades": {
+    "accuracy": "BELOW",
+    "robustness": "AT",
+    "calibration": "AT",
+    "abstention": "BELOW",
+    "auditability": "ABOVE"
+   }
+  },
+  "finetuned_2ep": {
+   "verdict": "NOT FIT FOR USE",
+   "below": [
+    "accuracy"
+   ],
+   "grades": {
+    "accuracy": "BELOW",
+    "robustness": "AT",
+    "calibration": "AT",
+    "abstention": "AT",
+    "auditability": "ABOVE"
+   }
+  },
+  "finetuned_8ep": {
+   "verdict": "NOT ESTABLISHED",
+   "below": [],
+   "grades": {
+    "accuracy": "AT",
+    "robustness": "AT",
+    "calibration": "AT",
+    "abstention": "ABOVE",
+    "auditability": "ABOVE"
+   }
+  }
+ }
+}
