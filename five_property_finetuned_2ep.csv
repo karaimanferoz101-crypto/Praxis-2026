@@ -1,0 +1,6 @@
+Property,Mark,Value,95% CI,Grade,Detail
+Accuracy,0.6200 min,0.4550,"[0.4069, 0.5040]",BELOW,182 of 400 cases with the reference diagnosis in the top three
+Robustness,0.7881 min,0.8077,"[0.7443, 0.8584]",AT,147 of 182 correct answers survive all three information-preserving conditions
+Calibration,0.0786 max,0.0634,"[0.0481, 0.1178]",AT,"Brier 0.2193, AUROC 0.6990"
+Abstention,0.5000 min,0.5075,"[0.4587, 0.5562]",AT,answers 203 of 400 cases at M3 of 0.6200 or higher
+Auditability,0.5400 min,0.8300,"[0.7901, 0.8636]",ABOVE,credited finding beats a random one in 332 of 400 cases
